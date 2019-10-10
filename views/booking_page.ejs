@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
     <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     
 <script src="https://use.fontawesome.com/9dabcdcb1d.js"></script>
 
@@ -36,45 +37,37 @@
             </div>
         </div>
     </nav>
-    <div class="jumbotron justify-content-center align-items-center">
-        <h1 class="text-center" style="margin:6px;">Room Allocation Form</h1>
-        <p class="text-center" style="margin:9px;">Select your Room your room from the prefered hall and Confirm</p>
-        <form style="padding:0px;width:560px;">
+    <div class="container full-height">
+        <div class="row flex center v-center full-height">
+            <div class="col-md-7 col-lg-7 col-sm-7">
+                <div class="form-box" id="form-g">
+            <form method="POST">
             <div class="form-group">
-                <select class="form-control" style="padding:6px;margin:10px;width:550px;height:40px;">
-                <option value="12" selected="">Select Hall</option>
-                <option value="13">Akuafo Hall</option>
-                <option value="14">Mensah Sarbah</option>
-                <option value="">Legon Hall</option>
-                <option value="">Commonwealth Hall</option>
-                <option value="">Volta Hall</option></select>
-                <select
-                    class="form-control" style="padding:6px;margin:10px;width:550px;height:40px;">
-                    <option value="12" selected="">Select Block</option>
-                    <option value="13">Block A</option>
-                    <option value="14">Block B</option>
-                    <option value="15">Block C</option>
-                    <option value="16">Block D</option>
-                    </select>
-                <select class="form-control" style="padding:6px;margin:10px;width:550px;height:40px;">
-                    <option value="12" selected="">Choose Room</option>
-                    <option value="13">This is item 2</option>
-                    <option value="14">This is item 3</option>
+                <h1 class="text-center" style="margin:6px;">Room Allocation Form</h1>
+                <p class="text-center" style="margin:9px;">Select your Room your room from the prefered hall and Confirm</p>
+                <select class="form-control custom-select" style="padding:6px;margin:10px;" name="hallSelect">
+                    <option value="12" selected="">Select Hall</option>
+                    <option value="Akuafo Hall" >Akuafo Hall</option>
+                    <option value="Mensah Sarbah">Mensah Sarbah</option>
+                    <option value="Legon Hall">Legon Hall</option>
+                    <option value="Commonwealth Hall">Commonwealth Hall</option>
+                    <option value="Volta Hall">Volta Hall</option>
                 </select>
-                    <select
-                        class="form-control" style="padding:6px;margin:10px;width:550px;height:40px;">
-                        <optgroup label="This is a group">
-                            <option value="12" selected="">This is item 1</option>
-                            <option value="13">This is item 2</option>
-                            <option value="14">This is item 3</option>
-                        </optgroup>
-                        </select>
-                <a class="btn btn-primary" role="button" href="#" style="height:40px;margin:11px;">Submit</a>
+                <select class="form-control custom-select" name="roomNumberSelect" style="padding:6px;margin:10px;">
+                    <option value="12" selected="">Choose Room</option>
+                    <option value="A001">A001</option>
+                    <option value="A001">A002</option>
+                    <option value="A001">B001</option>
+                    <option value="A001">BOO2</option>
+                    <option value="A001">B003</option>
+                </select>
+                <button class="genric-btn success circle" type="submit" style="font-size: 14px;font-weight: bold">Submitt </button>
             </div>
         </form>
-        <p></p>
+                </div>
+            </div>
+        </div>
     </div>
-   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
