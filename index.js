@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const connection=mongoose.connect('mongodb+srv://admin:1fBT5oDa5PAr1kKh@cluster0-nnkzp.mongodb.net/Student?retryWrites=true&w=majority', {useNewUrlParser: true});
 connection.then(()=>console.log("Database connection done"));
-// password: 1fBT5oDa5PAr1kKh
+// password: 701fBT5oDa5PAr1kKh70
 // username: admin
 
 const studentSchema = mongoose.Schema({
@@ -52,15 +52,19 @@ app.post("/login",(req,res)=>{
     Student.findOne({
         studentID: id,
         studentPIN: pin,
-    }).then(result =>(res.render("booking_page"))).catch(err =>{console.log(err)})
+    }).then(result =>(res.render("booking_page"))).catch(err =>{console.log(err)});
     let hallStudent = req.body.hallSelect;
     let roomStudent = req.body.roomNumberSelect;
     
-    Student.updateOne(
+    const filter = { studentID: id };
+    const update = { studentHall: hallStudent, studentRoom: roomStudent };
+    
+    res.render("profile");
+    Student.findOneAndUpdate(
         {"studentID": id},
         { $set: {studentHall: hallStudent, studentRoom: roomStudent}}
         
-    );
+    ).then(result =>(res.render("profile"))).catch(err =>{console.log(err)});
     console.log(hallStudent);
     console.log(roomStudent);
    
@@ -78,5 +82,5 @@ app.get("/profile",(req,res)=>{
 
 
 app.listen(5000,()=>{
-    console.log("Server successfully, running at port 5000");
+    console.log("http://localhost:5000 \nServer successfully, running at port 5000");
 })
